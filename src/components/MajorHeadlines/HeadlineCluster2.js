@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
         backgroundColor: design.NEW_SCHEME_BLACK,
         padding: 10,
         marginRight: 10,
+        marginLeft: 3,
+        marginTop: 2,
+        marginBottom: 2,
     },
     bigPicture: {
         backgroundColor: design.NEW_SCHEME_BURGUNDY,
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
     textVisibility: {
         color: design.COLOR_WHITE,
         marginBottom: 2,
-        fontSize: 16,
+        fontSize: 15,
     },
     textItalics: {
         fontStyle: 'italic',

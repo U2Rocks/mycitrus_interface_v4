@@ -54,8 +54,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 30,
-        backgroundColor: design.NEW_SCHEME_BURGUNDY,
-        borderRadius: 15,
+        backgroundColor: design.NEW_SCHEME_WHITE,
+        borderRadius: 25,
+        borderWidth: 2,
+        borderColor: design.NEW_SCHEME_BLACK,
         padding: 5,
     },
     border: {
