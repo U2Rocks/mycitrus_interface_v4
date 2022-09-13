@@ -1,11 +1,19 @@
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native'
 import design from '../../constants/newglobal'
 import { miniImg, test120 } from '../../images/imageExport2'
+import { useFonts } from 'expo-font'
 
 
 // interactible box that leads to full page of audio or news article...
 
-const MinorHeadline2 = () => {
+const MinorHeadline2 = ({ mTitle, mDate }) => {
+
+  const [fontsLoaded] = useFonts({
+    'Roboto': require('../../fonts/RobotoRegular-3m4L.ttf')
+  })
+
+  // sanity check to see if fonts even loaded
+  if (!fontsLoaded) return null
 
   const headlinePress = () => console.log("minor headline pressed")
 
@@ -13,8 +21,8 @@ const MinorHeadline2 = () => {
     <Pressable onPress={headlinePress}>
       <View style={styles.container}>
         <View style={styles.textSide}>
-          <Text style={styles.headlineText}>Sample Title that is unnecessarily long and might break styling</Text>
-          <Text style={styles.italiText}>Published: 9/12/44</Text>
+          <Text style={[styles.headlineText, {fontFamily: 'Roboto'}]}>{mTitle}</Text>
+          <Text style={[styles.italiText]}>Published: {mDate}</Text>
         </View>
         <View style={styles.imageBox}>
             <Image source={test120} style={styles.imageStyle}/>

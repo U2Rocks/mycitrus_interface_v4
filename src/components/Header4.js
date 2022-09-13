@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Pressable, TextInput } from 'react-native'
+import { useState } from 'react'
 import design from '../constants/newglobal'
 
 
@@ -8,17 +9,12 @@ import design from '../constants/newglobal'
 const Header4 = () => {
 
     // function that triggers when magnifying glass is pressed
-    const searchPress = () => console.log("Search Bar Toggled")
+    const searchPress = () => console.log("Search Button Pressed")
 
   return (
     <View style={styles.container}>
       <View style={[styles.center]}>
-        <View style={[styles.centerView]}>
-            <Pressable onPress={searchPress} style={[styles.buttonContainer]}>
-                <Text style={styles.buttonSearch}>🔍</Text>
-            </Pressable>
-        </View>
-        <Text style={[styles.text]}>MYCITRUS</Text>
+        <Text style={[styles.text]}>MYCITRUS NEWS</Text>
       </View>
     </View>
   )
@@ -38,7 +34,6 @@ const styles = StyleSheet.create({
         letterSpacing: 3,
         fontWeight: 'bold',
         color: design.NEW_SCHEME_WHITE,
-        marginRight: 45,
     },
     buttonSearch: {
         fontSize: 30,
@@ -68,4 +63,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    textSearchBar: {
+        padding: 5,
+        backgroundColor: design.NEW_SCHEME_WHITE,
+        borderColor: design.NEW_SCHEME_BLACK,
+        borderWidth: 1,
+        height: '100%',
+        width: '80%',
+    },
+    textSearchView: {
+        height: '100%',
+        width: '50%',
+        backgroundColor: design.NEW_SCHEME_WHITE,
+        borderColor: design.NEW_SCHEME_BLACK,
+    }
 })

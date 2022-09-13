@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import Header4 from '../src/components/Header4'
 import BigHeadlineBox2 from '../src/components/MajorHeadlines/BigHeadlineBox2'
 import MinorHeadlinesBox2 from '../src/components/MinorHeadlines/MinorHeadlinesBox2'
+import MinorHeadlineHeader2 from '../src/components/MinorHeadlines/MinorHeadlineHeader2'
 import design from '../src/constants/newglobal'
 
 
@@ -12,6 +13,7 @@ const HomeScreen4 = () => {
       <SafeAreaView style={styles.container}>
         <Header4 />
         <BigHeadlineBox2 />
+        <MinorHeadlineHeader2 />
         <MinorHeadlinesBox2 />
         <StatusBar barStyle={design.NEW_SCHEME_BLACK}/>
       </SafeAreaView>

@@ -1,10 +1,19 @@
 import { View, Text, StyleSheet } from 'react-native'
 import design from '../../constants/newglobal'
+import { useFonts } from 'expo-font'
 
 const MinorHeadlineHeader2 = () => {
+
+  const [fontsLoaded] = useFonts({
+    'RobotoBold': require('../../fonts/RobotoBold-Xdoj.ttf')
+  })
+
+  // sanity check to see if fonts even loaded
+  if (!fontsLoaded) return null
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Recent Headlines</Text>
+      <Text style={[styles.text, {fontFamily: 'RobotoBold'}]}>Recent Headlines</Text>
     </View>
   )
 }

@@ -1,8 +1,8 @@
-# Mycitrus App Interface V4
+# Mycitrus App Interface V4(Version 3)
 
 ## Summary
 
-This is the fourth prototype for the interface of the mycitrus app that I am working on. I have added a color scheme and have changed the header stylings to be more consistent.
+This is the fourth prototype for the interface of the mycitrus app that I am working on. I have added a color scheme and have changed the header stylings to be more consistent. I have also added new fonts in version 3.
 
 ## Build
 

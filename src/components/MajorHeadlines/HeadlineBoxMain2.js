@@ -1,19 +1,24 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, FlatList } from 'react-native'
 import design from '../../constants/newglobal'
 import HeadlineCluster2 from './HeadlineCluster2'
+import { bigArticleList } from '../../data/dataList4.js'
 
 // contains the rest of the content for the big box section
 
 const HeadlineBoxMain2 = () => {
+
+  const keyExtraction = item => item.id
+  const renderItems = ({item}) => (<HeadlineCluster2 mTitle={item.title} mDate={item.date}/>)
+
   return (
     <View style={styles.container}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <HeadlineCluster2 />
-        <HeadlineCluster2 />
-        <HeadlineCluster2 />
-        <HeadlineCluster2 />
-        <HeadlineCluster2 />
-      </ScrollView>
+      <FlatList 
+      data={bigArticleList}
+      keyExtractor={keyExtraction}
+      renderItem={renderItems}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      />
     </View>
   )
 }

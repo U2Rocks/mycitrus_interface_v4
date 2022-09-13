@@ -1,16 +1,27 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import design from '../../constants/newglobal'
 import { test400_2 } from '../../images/imageExport2'
+import { useFonts } from 'expo-font'
 
-const HeadlineCluster2 = () => {
+const HeadlineCluster2 = ({ mTitle, mDate }) => {
+
+    const [fontsLoaded] = useFonts({
+        'Roboto': require('../../fonts/RobotoRegular-3m4L.ttf'),
+        'ItalicRoboto': require('../../fonts/RobotoItalic-W0gE.ttf')
+    })
+
+    // sanity check to see if fonts even loaded
+    if (!fontsLoaded) return null
+
+
   return (
     <View style={styles.container}>
         <View style={styles.bigPicture}>
             <Image source={test400_2} style={styles.imageStyle}/>
         </View>
         <View style={styles.textContainer}>
-            <Text style={[styles.textVisibility]}>This Default Title is excessively long for no reason??? I will make it longer to cause issues</Text>
-            <Text style={[styles.textVisibility, styles.textItalics]}>Published: 08/11/22</Text>
+            <Text style={[styles.textVisibility, {fontFamily: 'Roboto'}]}>{mTitle}</Text>
+            <Text style={[styles.textVisibility, styles.textItalics, {fontFamily: 'ItalicRoboto'}]}>Published: {mDate}</Text>
         </View>
     </View>
   )
