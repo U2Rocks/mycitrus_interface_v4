@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is the fourth prototype for the interface of the mycitrus app that I am working on. I have added a color scheme and have changed the header stylings to be more consistent. I have also added new fonts in version 3.
+This is the fourth prototype for the interface of the mycitrus app that I am working on. I have added a color scheme and have changed the header stylings to be more consistent. I have also added new fonts in version 3. In version 4 I added screen switching and created a hook that calls for article data when the app loads.
 
 ## Build
 
@@ -10,5 +10,5 @@ This app uses React Native and the Expo managed workflow created with the blank 
 
 ## Final Comments and Notes
 
-- There is no screen switching capabilities in this early prototype
+- There is screenswitching in the current version but all the assets are static except the title
 - All infomation is premade in JSON data files
