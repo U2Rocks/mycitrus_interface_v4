@@ -5,10 +5,10 @@ import { bigArticleList } from '../../data/dataList4.js'
 
 // contains the rest of the content for the big box section
 
-const HeadlineBoxMain2 = () => {
+const HeadlineBoxMain2 = ({ navigation }) => {
 
   const keyExtraction = item => item.id
-  const renderItems = ({item}) => (<HeadlineCluster2 mTitle={item.title} mDate={item.date}/>)
+  const renderItems = ({item}) => (<HeadlineCluster2 mTitle={item.title} mDate={item.date} navigate={navigation}/>)
 
   return (
     <View style={styles.container}>

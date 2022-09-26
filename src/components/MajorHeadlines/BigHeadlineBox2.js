@@ -5,11 +5,11 @@ import HeadlineBoxMain2 from './HeadlineBoxMain2'
 // this is the component that holds smaller components
 // for the big box headline / has horizontal scrolling?
 
-const BigHeadlineBox2 = () => {
+const BigHeadlineBox2 = ({ navigate }) => {
   return (
     <View style={styles.container}>
         <HeadlineBoxHeader2 />
-        <HeadlineBoxMain2 />
+        <HeadlineBoxMain2 navigation={navigate} />
     </View>
   )
 }

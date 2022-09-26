@@ -1,10 +1,12 @@
-// dummy data that can be used with the flatlist on
-// other components
+import { useState, useEffect } from 'react'
+import { fillerText } from '../data/dataList4'
 
-// dummy text for filling article text requirements
-const fillerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. This text was originally longer but took too much console space..."
+// this hook will get article data from a master state that is filled in when the app loads
+// load app -> hook triggered -> state is filled in with query info
+// click on article -> hook gets information from state object to fill out article -> info fills page via props
 
-const article_list = 
+// temporary static list for testing base articles
+const testArticleList = 
 [{id: 1, title: "Ukraine's Advance into Russia Stalled by intense resistance and new stories of disaster from frontlines", Date: "9/08/22", articleText: fillerText}, 
 {id: 2, title: "Man Found Dead on Pavement", Date: "9/09/22", articleText: fillerText}, 
 {id: 3, title: "Man Found Dead on Building", Date: "9/10/22", articleText: fillerText}, 
@@ -15,7 +17,8 @@ const article_list =
 {id: 8, title: "Man Driving Car in Alabama", Date: "9/15/22", articleText: fillerText},
 ]
 
-const bigArticleList = [
+// temporary static list for testing top stories
+const testBigArticleList = [
     {id: 1, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
     {id: 2, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
     {id: 3, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
@@ -23,11 +26,28 @@ const bigArticleList = [
     {id: 5, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
 ]
 
-const number_list = [1, 2, 3, 4, 5, 6]
+export default function useArticles() {
+    const [errorMsg, setErrorMsg] = useState("")
+    const [currentArticleInfo, setCurrentArticleInfo] = useState({})
 
-export {
-    article_list,
-    number_list,
-    bigArticleList,
-    fillerText
+    // function that fetches data to populate currentArticleInfo
+    async function fetchData(){
+        console.log("useArticles loaded")
+        setCurrentArticleInfo({
+            articleList: testArticleList,
+            bigArticleList: testBigArticleList
+        })
+        console.log('useArticles has triggered: ', currentArticleInfo)
+    }
+
+    // use effect that triggers function call to fetch data
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    function getArticleInfo(articleTitle){
+        // this function will updated the article info to new information based on input
+    }
+
+    return [currentArticleInfo, getArticleInfo, errorMsg]
 }

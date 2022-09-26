@@ -6,16 +6,20 @@ import { useFonts } from 'expo-font'
 
 // interactible box that leads to full page of audio or news article...
 
-const MinorHeadline2 = ({ mTitle, mDate }) => {
+const MinorHeadline2 = ({ mTitle, mDate, navigation }) => {
 
   const [fontsLoaded] = useFonts({
     'Roboto': require('../../fonts/RobotoRegular-3m4L.ttf')
   })
 
+  function naviateToArticle() {
+    navigation.navigate('RecentHead', {aTitle: mTitle})
+  }
+
   // sanity check to see if fonts even loaded
   if (!fontsLoaded) return null
 
-  const headlinePress = () => console.log("minor headline pressed")
+  const headlinePress = () => naviateToArticle()
 
   return (
     <Pressable onPress={headlinePress}>
