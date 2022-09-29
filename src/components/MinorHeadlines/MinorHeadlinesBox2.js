@@ -6,16 +6,16 @@ import { article_list } from '../../data/dataList4.js'
 
 // vertical scrolling box that contains all minor headlines...
 
-const MinorHeadlinesBox2 = ({ navigate }) => {
+const MinorHeadlinesBox2 = ({ navigate, articleInfo }) => {
 
-  const renderItems = ({item}) => (<MinorHeadline2 mTitle={item.title} mDate={item.Date} navigation={navigate} />)
+  const renderItems = ({item}) => (<MinorHeadline2 mTitle={item.title} mDate={item.Date} navigation={navigate} id={item.id} />)
   const keyExtractorFunc = item => item.id
 
 
   return (
     <View style={styles.container}>
       <FlatList 
-      data={article_list}
+      data={articleInfo.articleList}
       renderItem={renderItems}
       keyExtractor={keyExtractorFunc}
       showsVerticalScrollIndicator={false}

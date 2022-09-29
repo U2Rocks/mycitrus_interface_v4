@@ -8,7 +8,7 @@ import { fillerText } from '../data/dataList4'
 // temporary static list for testing base articles
 const testArticleList = 
 [{id: 1, title: "Ukraine's Advance into Russia Stalled by intense resistance and new stories of disaster from frontlines", Date: "9/08/22", articleText: fillerText}, 
-{id: 2, title: "Man Found Dead on Pavement", Date: "9/09/22", articleText: fillerText}, 
+{id: 2, title: "Man Found Dead on Kosovo", Date: "9/09/22", articleText: fillerText}, 
 {id: 3, title: "Man Found Dead on Building", Date: "9/10/22", articleText: fillerText}, 
 {id: 4, title: "Man Found Dead on Tram Station", Date: "9/11/22", articleText: fillerText},
 {id: 5, title: "Man Found Dead at Bus Stop", Date: "9/12/22", articleText: fillerText},
@@ -19,7 +19,7 @@ const testArticleList =
 
 // temporary static list for testing top stories
 const testBigArticleList = [
-    {id: 1, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
+    {id: 1, title: "Serbia has declared war on Kosovo and Bosnia and even LESS", date: "08/11/22", articleText: fillerText},
     {id: 2, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
     {id: 3, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},
     {id: 4, title: "Serbia has declared war on Kosovo and Bosnia and even more action", date: "08/11/22", articleText: fillerText},

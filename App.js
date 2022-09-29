@@ -5,8 +5,8 @@ import RecentHeadlineScreen from './screens/RecentHeadlineScreen';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-// create useArticles hook logic and statically load with dummy data ->
-// make sure hook works with loading data
+// only non reactive part of app is body text for articles
+// NEXT: make body text reactive to json structures 
 
 const Stack = createNativeStackNavigator()
 
@@ -15,8 +15,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Home" component={HomeScreen4} />
-        <Stack.Screen name="RecentHead" component={RecentHeadlineScreen} />
-        <Stack.Screen name="TopStory" component={TopStoryScreen} />
+        <Stack.Screen name="Recent Headline" component={RecentHeadlineScreen} />
+        <Stack.Screen name="Top Story" component={TopStoryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,15 +5,15 @@ import { bigArticleList } from '../../data/dataList4.js'
 
 // contains the rest of the content for the big box section
 
-const HeadlineBoxMain2 = ({ navigation }) => {
+const HeadlineBoxMain2 = ({ navigation, articlesInfo }) => {
 
   const keyExtraction = item => item.id
-  const renderItems = ({item}) => (<HeadlineCluster2 mTitle={item.title} mDate={item.date} navigate={navigation}/>)
+  const renderItems = ({item}) => (<HeadlineCluster2 mTitle={item.title} mDate={item.date} navigate={navigation} id={item.id}/>)
 
   return (
     <View style={styles.container}>
       <FlatList 
-      data={bigArticleList}
+      data={articlesInfo.bigArticleList}
       keyExtractor={keyExtraction}
       renderItem={renderItems}
       horizontal
