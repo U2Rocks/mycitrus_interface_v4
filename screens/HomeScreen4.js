@@ -13,7 +13,7 @@ import useArticles from '../src/hooks/useArticles'
 const HomeScreen4 = ({ navigation }) => {
 
 
-  const [curArticle, setCurArticle, errorText] = useArticles()
+  const [curArticle, setCurArticle, setBigCurArticle, errorText] = useArticles()
   
 
   useLayoutEffect(() => {

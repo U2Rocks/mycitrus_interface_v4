@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 // only non reactive part of app is body text for articles
 // NEXT: make body text reactive to json structures 
+// CURRENT: hook is not fetching data properly but functions are running
 
 const Stack = createNativeStackNavigator()
 

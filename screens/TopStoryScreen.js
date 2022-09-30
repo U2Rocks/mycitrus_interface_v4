@@ -1,14 +1,23 @@
 import { SafeAreaView, Text, StyleSheet } from 'react-native'
 import TopHeader from '../src/components/TopStories/TopHeader'
 import TopBody from '../src/components/TopStories/TopBody'
-import TopFooter from '../src/components/TopStories/TopFooter'
 import design from '../src/constants/newglobal'
+import useArticles from '../src/hooks/useArticles'
+import { useEffect } from 'react'
 
 // screen that is populated when someone clicks on a top article
 
 const TopStoryScreen = ({ route, navigation }) => {
 
-  const { topTitle } = route.params
+  const { topTitle, topId } = route.params
+
+  const [current, setReg, setBig, errorMsg] = useArticles()
+
+  useEffect( () => {
+    console.log(`TopStory Screen title: [${topTitle}] and Id: [${topId}] `)
+    let newCurrent = setBig(topTitle, topId)
+    console.log('TopStoryScreen: ', newCurrent)
+  }, [])
 
   return (
     <SafeAreaView style={styles.container}>

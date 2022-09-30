@@ -28,26 +28,42 @@ const testBigArticleList = [
 
 export default function useArticles() {
     const [errorMsg, setErrorMsg] = useState("")
-    const [currentArticleInfo, setCurrentArticleInfo] = useState({})
+    const [currentArticleInfo, setCurrentArticleInfo] = useState({
+        articleList: null,
+        bigArticleList: null
+    })
 
     // function that fetches data to populate currentArticleInfo
     async function fetchData(){
-        console.log("useArticles loaded")
-        setCurrentArticleInfo({
+        console.log("FetchData Start: useArticles loaded")
+        await setCurrentArticleInfo({
             articleList: testArticleList,
             bigArticleList: testBigArticleList
         })
-        console.log('useArticles has triggered: ', currentArticleInfo)
+        console.log('FetchData End: useArticles has finished')
     }
 
     // use effect that triggers function call to fetch data
     useEffect(() => {
+        console.log("---useArticle useEffect triggered---")
         fetchData()
     }, [])
 
-    function getArticleInfo(articleTitle){
-        // this function will updated the article info to new information based on input
+    // function that grabs info for recent headlines
+    function getArticleInfo(articleTitle, articleId){
+        if (currentArticleInfo.articleList == null) return
+        let funcList = currentArticleInfo.articleList.filter((item) => item.id = articleId)
+        let searchArticle = funcList.filter((item) => item.title = articleTitle)
+        return searchArticle
+    }
+    
+    // function that grabs info for top stories
+    function getBigArticleInfo(articleTitle, articleId){
+        console.log('bigArticleCheck: ', currentArticleInfo)
+        if (currentArticleInfo.bigArticleList == null) return
+        let funcList = currentArticleInfo['bigArticleList'].filter((item) => item.id === articleId)
+        return funcList
     }
 
-    return [currentArticleInfo, getArticleInfo, errorMsg]
+    return [currentArticleInfo, getArticleInfo, getBigArticleInfo, errorMsg]
 }

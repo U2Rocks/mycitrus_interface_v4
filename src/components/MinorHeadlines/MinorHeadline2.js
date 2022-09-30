@@ -13,7 +13,7 @@ const MinorHeadline2 = ({ mTitle, mDate, navigation, id }) => {
   })
 
   function naviateToArticle() {
-    navigation.navigate('Recent Headline', {aTitle: mTitle})
+    navigation.navigate('Recent Headline', {aTitle: mTitle, aId: id})
   }
 
   // sanity check to see if fonts even loaded

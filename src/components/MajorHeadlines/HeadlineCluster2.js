@@ -14,7 +14,7 @@ const HeadlineCluster2 = ({ mTitle, mDate, navigate, id }) => {
     if (!fontsLoaded) return null
 
     // navigate to top story page on click
-    const navigateToTopStory = () => navigate.navigate('Top Story', {topTitle: mTitle})
+    const navigateToTopStory = () => navigate.navigate('Top Story', {topTitle: mTitle, topId: id})
 
 
   return (

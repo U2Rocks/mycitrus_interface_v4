@@ -8,7 +8,7 @@ import RecentFooter from '../src/components/RecentHeadlines/RecentFooter'
 
 const RecentHeadlineScreen = ({ route, navigation }) => {
 
-  const { aTitle } = route.params
+  const { aTitle, aId } = route.params
 
 
   return (
