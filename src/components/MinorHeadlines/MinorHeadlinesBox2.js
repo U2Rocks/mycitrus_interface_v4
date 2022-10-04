@@ -6,9 +6,9 @@ import { article_list } from '../../data/dataList4.js'
 
 // vertical scrolling box that contains all minor headlines...
 
-const MinorHeadlinesBox2 = ({ navigate, articleInfo }) => {
+const MinorHeadlinesBox2 = ({ navigate, articleInfo, smallArtFunc }) => {
 
-  const renderItems = ({item}) => (<MinorHeadline2 mTitle={item.title} mDate={item.Date} navigation={navigate} id={item.id} />)
+  const renderItems = ({item}) => (<MinorHeadline2 mTitle={item.title} mDate={item.Date} navigation={navigate} id={item.id} getSmallArt={smallArtFunc} />)
   const keyExtractorFunc = item => item.id
 
 

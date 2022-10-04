@@ -2,18 +2,19 @@ import { View, Text, StyleSheet, Pressable, Image } from 'react-native'
 import design from '../../constants/newglobal'
 import { miniImg, test120 } from '../../images/imageExport2'
 import { useFonts } from 'expo-font'
+import { useEffect } from 'react'
 
 
 // interactible box that leads to full page of audio or news article...
 
-const MinorHeadline2 = ({ mTitle, mDate, navigation, id }) => {
+const MinorHeadline2 = ({ mTitle, mDate, navigation, id, getSmallArt }) => {
 
   const [fontsLoaded] = useFonts({
     'Roboto': require('../../fonts/RobotoRegular-3m4L.ttf')
   })
 
   function naviateToArticle() {
-    navigation.navigate('Recent Headline', {aTitle: mTitle, aId: id})
+    navigation.navigate('Recent Headline', {aTitle: mTitle, aInfo: getSmallArt(mTitle, id)})
   }
 
   // sanity check to see if fonts even loaded

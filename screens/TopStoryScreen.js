@@ -9,20 +9,20 @@ import { useEffect } from 'react'
 
 const TopStoryScreen = ({ route, navigation }) => {
 
-  const { topTitle, topId } = route.params
+  const { topTitle, topInfo } = route.params
+  const storyText = topInfo[0]["articleText"] ? topInfo[0]["articleText"] : "Something went wrong..." 
 
-  const [current, setReg, setBig, errorMsg] = useArticles()
+  // const [current, setReg, setBig, errorMsg] = useArticles()
 
   useEffect( () => {
-    console.log(`TopStory Screen title: [${topTitle}] and Id: [${topId}] `)
-    let newCurrent = setBig(topTitle, topId)
-    console.log('TopStoryScreen: ', newCurrent)
+    console.log(`$$$$$$TopStory Screen title: [${topTitle}] and topInfo: [${topInfo}] `)
+    console.log('@@@@@@TopStoryScreen body text: ', topInfo[0]["articleText"])
   }, [])
 
   return (
     <SafeAreaView style={styles.container}>
       <TopHeader artTitle={topTitle}/>
-      <TopBody artTitle={topTitle} />
+      <TopBody artTitle={topTitle} artBody={storyText} />
     </SafeAreaView>
   )
 }

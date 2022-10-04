@@ -23,9 +23,9 @@ const HomeScreen4 = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <Header4 />
-        <BigHeadlineBox2 articleInfo={curArticle} navigate={navigation} />
+        <BigHeadlineBox2 bigArtFunc={setBigCurArticle} articleInfo={curArticle} navigate={navigation} />
         <MinorHeadlineHeader2 />
-        <MinorHeadlinesBox2 articleInfo={curArticle} navigate={navigation} />
+        <MinorHeadlinesBox2 smallArtFunc={setCurArticle} articleInfo={curArticle} navigate={navigation} />
         <StatusBar barStyle={design.NEW_SCHEME_BLACK}/>
       </SafeAreaView>
     )

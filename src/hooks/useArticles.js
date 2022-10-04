@@ -45,23 +45,27 @@ export default function useArticles() {
 
     // use effect that triggers function call to fetch data
     useEffect(() => {
-        console.log("---useArticle useEffect triggered---")
+        console.log("@@@@@<---useArticle useEffect triggered--->@@@@@")
         fetchData()
     }, [])
 
     // function that grabs info for recent headlines
     function getArticleInfo(articleTitle, articleId){
-        if (currentArticleInfo.articleList == null) return
-        let funcList = currentArticleInfo.articleList.filter((item) => item.id = articleId)
-        let searchArticle = funcList.filter((item) => item.title = articleTitle)
-        return searchArticle
+        console.log('currentArticleInfo state(top of getArticleInfo): ', currentArticleInfo)
+        if (currentArticleInfo['articleList'] === null) return
+        let smallFuncList = currentArticleInfo.articleList
+        let funcList = smallFuncList.filter((item) => item.id === articleId)
+        console.log('<--------------Result of filter: ', funcList)
+        return funcList
     }
     
     // function that grabs info for top stories
     function getBigArticleInfo(articleTitle, articleId){
-        console.log('bigArticleCheck: ', currentArticleInfo)
-        if (currentArticleInfo.bigArticleList == null) return
-        let funcList = currentArticleInfo['bigArticleList'].filter((item) => item.id === articleId)
+        console.log('currentArticleInfo state(top of getBigArticleInfo): ', currentArticleInfo)
+        let bigFuncList = currentArticleInfo.bigArticleList
+        if (currentArticleInfo['bigArticleList'] === null) return
+        let funcList = bigFuncList.filter((item) => item.id === articleId)
+        console.log('<--------------Result of filter: ', funcList)
         return funcList
     }
 

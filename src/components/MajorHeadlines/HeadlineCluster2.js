@@ -3,7 +3,7 @@ import design from '../../constants/newglobal'
 import { test400_2 } from '../../images/imageExport2'
 import { useFonts } from 'expo-font'
 
-const HeadlineCluster2 = ({ mTitle, mDate, navigate, id }) => {
+const HeadlineCluster2 = ({ mTitle, mDate, navigate, id, getBigArt }) => {
 
     const [fontsLoaded] = useFonts({
         'Roboto': require('../../fonts/RobotoRegular-3m4L.ttf'),
@@ -14,7 +14,7 @@ const HeadlineCluster2 = ({ mTitle, mDate, navigate, id }) => {
     if (!fontsLoaded) return null
 
     // navigate to top story page on click
-    const navigateToTopStory = () => navigate.navigate('Top Story', {topTitle: mTitle, topId: id})
+    const navigateToTopStory = () => navigate.navigate('Top Story', {topTitle: mTitle, topInfo: getBigArt(mTitle, id)})
 
 
   return (
